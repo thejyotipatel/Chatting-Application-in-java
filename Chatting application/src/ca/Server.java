@@ -127,7 +127,6 @@ public class Server  extends JFrame implements ActionListener{
 				 dout = new DataOutputStream(s.getOutputStream());
 				 br = new BufferedReader(new InputStreamReader(System.in));
 				 
-				 
 				 while(!m.equals("stop")) {
 					 msg = in.readUTF();
 					 txtarea.setText(txtarea.getText() + "\n" + msg);
