@@ -1,26 +1,11 @@
 package ca;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
 import java.net.Socket;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class Client extends JFrame implements ActionListener{
        
@@ -45,6 +30,7 @@ public class Client extends JFrame implements ActionListener{
 		headerPanel.setBackground(new Color(237, 237, 237));
 		headerPanel.setBounds(0, 0, 350, 50);
 		add(headerPanel); 
+		
 		//back icon			
 		ImageIcon icon1 = new ImageIcon("back.png");
 		Image img = icon1.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT);
@@ -58,11 +44,13 @@ public class Client extends JFrame implements ActionListener{
 				System.exit(0);
 			}
 		});
+		
 		//name label
 		JLabel l2 = new JLabel("Jerry");
 		l2.setBounds(170, 0, 50, 50);
 		l2.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
 		headerPanel.add(l2);
+		
 		//background of text display			
 		txtarea = new JTextArea();
 		txtarea.setBounds(10, 52, 330, 450);
@@ -72,17 +60,20 @@ public class Client extends JFrame implements ActionListener{
 		txtarea.setWrapStyleWord(false);
 		txtarea.setEditable(false);
 		add(txtarea);
+		
 		//footer panel
 		footerPanel = new JPanel();
 		footerPanel.setLayout(null);
 		footerPanel.setBackground(new Color(237, 237, 237));
 		footerPanel.setBounds(0, 500, 350, 50);
 		add(footerPanel); 
+		
 		//message enter field
 		txtfield = new JTextField();
 		txtfield.setBounds(10, 10, 250, 30); 
 		txtfield.setFont(new Font("SAN_SERIF", Font.PLAIN, 14));
 		footerPanel.add(txtfield);
+		
 		//send button			
 		sendbut = new JButton("Send");
 		sendbut.setBounds(270, 10, 70, 30);
@@ -97,8 +88,7 @@ public class Client extends JFrame implements ActionListener{
 		setResizable(false);
 		setLayout(null);
 		setSize(350, 550);
-		setUndecorated(true);
-//		setLocationRelativeTo(null);
+		setUndecorated(true); 
 		setLocation(650, 100);
 		setVisible(true);
 		 
