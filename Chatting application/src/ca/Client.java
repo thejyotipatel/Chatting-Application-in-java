@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.net.Socket;
+import java.time.LocalDate;
 
 import javax.swing.*;
 
@@ -47,13 +48,22 @@ public class Client extends JFrame implements ActionListener{
 		
 		//name label
 		JLabel l2 = new JLabel("Jerry");
-		l2.setBounds(170, 0, 50, 50);
+		l2.setBounds(150, 0, 50, 50);
 		l2.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
 		headerPanel.add(l2);
 		
+
+		//Display Date, month and year
+		JLabel l3 = new JLabel();
+		l3.setBounds(130, 40, 100, 50);
+		l3.setFont(new Font("SAN_SERIF", Font.PLAIN, 12));
+		LocalDate ld = LocalDate.now();  
+		l3.setText(ld.getMonth() + " " + ld.getDayOfMonth() + ", " + ld.getYear());
+		add(l3);
+		
 		//background of text display			
 		txtarea = new JTextArea();
-		txtarea.setBounds(10, 52, 330, 450);
+		txtarea.setBounds(10, 72, 330, 430);
 		txtarea.setBackground(new Color(244, 244, 244)); 
 		txtarea.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
 		txtarea.setLineWrap(true);
