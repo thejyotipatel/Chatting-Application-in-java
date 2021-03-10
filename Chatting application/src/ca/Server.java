@@ -70,7 +70,7 @@ public class Server  extends JFrame implements ActionListener{
 			txtarea.setWrapStyleWord(false);
 			txtarea.setEditable(false);
 			add(txtarea); 
-			  			
+			  		  	
 			//footer panel
 			footerPanel = new JPanel();
 			footerPanel.setLayout(null);
@@ -106,19 +106,17 @@ public class Server  extends JFrame implements ActionListener{
  
 		public void actionPerformed(ActionEvent ae) {
 			 
-			try {
-				 
+			try {	 
 				String out = txtfield.getText();  
 				LocalTime lt = LocalTime.now();
 				String t = lt.getHour() + ":" + lt.getMinute(); 
-					 
 				txtarea.setText(txtarea.getText() + "\n\t\t" + out  + "\n\t\t   " + t);
 				dout.writeUTF(out);
 				txtfield.setText("");
 			} catch (IOException e) { 
 				e.printStackTrace();
 			} 
-			 
+			
 		}
 		public static void main(String[] args) {
 			 new Server().setVisible(true);
@@ -128,16 +126,16 @@ public class Server  extends JFrame implements ActionListener{
 				 skt = new ServerSocket(6001);
 				 s = skt.accept();
 				 in = new DataInputStream(s.getInputStream());
-				 dout = new DataOutputStream(s.getOutputStream());
-				 br = new BufferedReader(new InputStreamReader(System.in));
 				 
+				 dout = new DataOutputStream(s.getOutputStream());
+				 
+				 br = new BufferedReader(new InputStreamReader(System.in));
 				 while(!m.equals("stop")) {
-					 msg = in.readUTF();
-
+					msg = in.readUTF();
 					LocalTime lt = LocalTime.now();
 					String t = lt.getHour() + ":" + lt.getMinute(); 
-						 
-					 txtarea.setText(txtarea.getText() + "\n" + msg + "\n\t" + t);
+					
+					txtarea.setText(txtarea.getText() + "\n" + msg + "\n\t" + t);
 				 }
 				 skt.close();
 				 s.close();
