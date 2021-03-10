@@ -4,7 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import java.net.*;
-import java.time.LocalDate; 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.zone.*;
 import javax.swing.*;
 
 public class Server  extends JFrame implements ActionListener{
@@ -13,6 +15,7 @@ public class Server  extends JFrame implements ActionListener{
 		JPanel headerPanel,footerPanel; 
 		JTextField txtfield;
 		JButton sendbut; 
+		LocalDate ld;
 		static JTextArea txtarea;
 		
 		static BufferedReader br;
@@ -54,7 +57,7 @@ public class Server  extends JFrame implements ActionListener{
 			JLabel l3 = new JLabel();
 			l3.setBounds(130, 40, 100, 50);
 			l3.setFont(new Font("SAN_SERIF", Font.PLAIN, 12));
-			LocalDate ld = LocalDate.now();  
+			ld = LocalDate.now();  
 			l3.setText(ld.getMonth() + " " + ld.getDayOfMonth() + ", " + ld.getYear());
 			add(l3);
 		
@@ -106,7 +109,10 @@ public class Server  extends JFrame implements ActionListener{
 			try {
 				 
 				String out = txtfield.getText();  
-				txtarea.setText(txtarea.getText() + "\n\t\t" + out);
+				LocalTime lt = LocalTime.now();
+				String t = lt.getHour() + ":" + lt.getMinute(); 
+					 
+				txtarea.setText(txtarea.getText() + "\n\t\t" + out  + "\n\t\t   " + t);
 				dout.writeUTF(out);
 				txtfield.setText("");
 			} catch (IOException e) { 
@@ -127,7 +133,11 @@ public class Server  extends JFrame implements ActionListener{
 				 
 				 while(!m.equals("stop")) {
 					 msg = in.readUTF();
-					 txtarea.setText(txtarea.getText() + "\n" + msg);
+
+					LocalTime lt = LocalTime.now();
+					String t = lt.getHour() + ":" + lt.getMinute(); 
+						 
+					 txtarea.setText(txtarea.getText() + "\n" + msg + "\n\t" + t);
 				 }
 				 skt.close();
 				 s.close();
