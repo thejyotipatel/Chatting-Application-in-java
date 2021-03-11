@@ -135,7 +135,7 @@ public class Server  extends JFrame implements ActionListener{
 					LocalTime lt = LocalTime.now();
 					String t = lt.getHour() + ":" + lt.getMinute(); 
 					
-					txtarea.setText(txtarea.getText() + "\n" + msg + "\n\t" + t);
+					txtarea.setText(txtarea.getText() + "\n" + msg + "\n" + t);
 				 }
 				 skt.close();
 				 s.close();

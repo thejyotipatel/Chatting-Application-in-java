@@ -111,7 +111,7 @@ public class Client extends JFrame implements ActionListener{
 			 String out = txtfield.getText();
 			 LocalTime lt = LocalTime.now();
 			 String t = lt.getHour() + ":" + lt.getMinute();
-			 txtarea.setText(txtarea.getText() + "\n\t\t" + out + "\n\t" + t);
+			 txtarea.setText(txtarea.getText() + "\n\t\t" + out + "\n\t\t" + t);
 			 dout.writeUTF(out);
 			 txtfield.setText("");
 		} catch (IOException e) { 
@@ -135,7 +135,7 @@ public class Client extends JFrame implements ActionListener{
 				 msg = in.readUTF();
 				 LocalTime lt = LocalTime.now();
 				 String t = lt.getHour() + ":" + lt.getMinute();
-				 txtarea.setText(txtarea.getText() + "\n" + msg + "\n\t" + t);
+				 txtarea.setText(txtarea.getText() + "\n" + msg + "\n" + t);
 			 }
 			 s.close();
 		 }catch(Exception e) {}
