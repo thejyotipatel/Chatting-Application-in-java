@@ -16,6 +16,9 @@ public class Client extends JFrame implements ActionListener{
 	JPanel headerPanel,footerPanel;
 	JTextField txtfield;
 	JButton sendbut;
+	JLabel l1, l2, l3, l4;
+	ImageIcon icon1, icon2;
+	Image img;
 	static JTextArea txtarea;
 	 
 	static BufferedReader br;
@@ -34,10 +37,10 @@ public class Client extends JFrame implements ActionListener{
 		add(headerPanel); 
 		
 		//back icon			
-		ImageIcon icon1 = new ImageIcon("back.png");
-		Image img = icon1.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT);
-		ImageIcon icon2 = new ImageIcon(img);
-		JLabel l1 = new JLabel(icon2);
+		icon1 = new ImageIcon("back.png");
+		img = icon1.getImage().getScaledInstance(25, 25, Image.SCALE_DEFAULT);
+		icon2 = new ImageIcon(img);
+		l1 = new JLabel(icon2);
 		l1.setBounds(5, 10, 25, 25);
 		headerPanel.add(l1);
 		
@@ -48,14 +51,14 @@ public class Client extends JFrame implements ActionListener{
 		});
 		
 		//name label
-		JLabel l2 = new JLabel("Jerry");
+		l2 = new JLabel("Jerry");
 		l2.setBounds(150, 0, 50, 50);
 		l2.setFont(new Font("SAN_SERIF", Font.PLAIN, 16));
 		headerPanel.add(l2);
 		
 
 		//Display Date, month and year
-		JLabel l3 = new JLabel();
+		l3 = new JLabel();
 		l3.setBounds(130, 40, 100, 50);
 		l3.setFont(new Font("SAN_SERIF", Font.PLAIN, 12));
 		LocalDate ld = LocalDate.now();  
