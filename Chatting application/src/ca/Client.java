@@ -5,6 +5,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.net.Socket;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.swing.*;
 
@@ -108,9 +109,11 @@ public class Client extends JFrame implements ActionListener{
 		  
 		 try {
 			 String out = txtfield.getText();
-			 txtarea.setText(txtarea.getText() + "\n\t\t" + out);
-			dout.writeUTF(out);
-			txtfield.setText("");
+			 LocalTime lt = LocalTime.now();
+			 String t = lt.getHour() + ":" + lt.getMinute();
+			 txtarea.setText(txtarea.getText() + "\n\t\t" + out + "\n\t" + t);
+			 dout.writeUTF(out);
+			 txtfield.setText("");
 		} catch (IOException e) { 
 			e.printStackTrace();
 		}
@@ -130,7 +133,9 @@ public class Client extends JFrame implements ActionListener{
 			 String msg = "",m= "";
 			 while(!m.equals("stop")) {  
 				 msg = in.readUTF();
-				 txtarea.setText(txtarea.getText() + "\n" + msg);
+				 LocalTime lt = LocalTime.now();
+				 String t = lt.getHour() + ":" + lt.getMinute();
+				 txtarea.setText(txtarea.getText() + "\n" + msg + "\n\t" + t);
 			 }
 			 s.close();
 		 }catch(Exception e) {}
