@@ -33,12 +33,10 @@ IDE Used - Eclipse
 ## How to clone this repository
 
 You can clone and run this application in your system by using the following commands:
+ 
+step 1 : `git clone https://github.com/jyotip101/Chatting-Application-in-java.git`
 
-step 1 : `get clone`
+step 2 : `cd Chatting-Application-in-java`
 
-step 2 : `git clone https://github.com/jyotip101/Chatting-Application-in-java.git`
-
-step 3 : `cd Chatting-Application-in-java`
-
-step 4 : run your application
+step 3 : run your application
  
