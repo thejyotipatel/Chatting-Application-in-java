@@ -8,7 +8,7 @@
 ## Table of Contents
 
 <!-- - [Demo](#demo) -->
-- [Overview](#overview) 
+<!-- - [Overview](#overview)  -->
 - [Build](#build)
 - [How to clone this repository](#how-to-clone-this-repository)
 
@@ -21,14 +21,19 @@
 <!-- Build  -->
 
 ## Build  
- 
-Language Used -  Java Core 
-Concept Used - Swing & Socket Programming
-IDE Used - Eclipse
+```
+Language Used 
+ - Java Core 
 
+Concept Used 
+ - Swing & Socket Programming
+
+IDE Used 
+ - Eclipse
+```
 <!-- OVERVIEW -->
 
-## Overview 
+<!-- ## Overview  -->
 
 ## How to clone this repository
 
@@ -36,7 +41,7 @@ You can clone and run this application in your system by using the following com
  
 step 1 : `git clone https://github.com/jyotip101/Chatting-Application-in-java.git`
 
-step 2 : `cd Chatting-Application-in-java`
+step 2 : Open `Chatting-Application-in-java` folder in Eclipse IDE  
 
-step 3 : run your application
+step 3 : run your application  
  
